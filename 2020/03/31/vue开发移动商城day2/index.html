@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vue," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、滑动吸顶效果123position: sticky;top: 44px;&#x2F;&#x2F; 滑动距离顶部44px时，position会自动转化为fixed属性，我们在做移动端商城项目时，比如有滑动到一定具体顶部标签停止不动，这个属性将很好实现。注意：目前有些低版本的浏览器可能不兼容，需谨慎使用。  二、数据保存模型我们需要做一个数据展示，在 ‘流行，新款，精选’ 三个模块里面数据会从后台">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue开发移动商城day2">
+<meta property="og:url" content="https://huyu18.github.io/2020/03/31/vue%E5%BC%80%E5%8F%91%E7%A7%BB%E5%8A%A8%E5%95%86%E5%9F%8Eday2/index.html">
+<meta property="og:site_name" content="一叶之秋de博客">
+<meta property="og:description" content="一、滑动吸顶效果123position: sticky;top: 44px;&#x2F;&#x2F; 滑动距离顶部44px时，position会自动转化为fixed属性，我们在做移动端商城项目时，比如有滑动到一定具体顶部标签停止不动，这个属性将很好实现。注意：目前有些低版本的浏览器可能不兼容，需谨慎使用。  二、数据保存模型我们需要做一个数据展示，在 ‘流行，新款，精选’ 三个模块里面数据会从后台">
+<meta property="og:image" content="https://huyu18.github.io/2020/03/31/vue%E5%BC%80%E5%8F%91%E7%A7%BB%E5%8A%A8%E5%95%86%E5%9F%8Eday2/1581493387629.png">
+<meta property="og:image" content="https://huyu18.github.io/2020/03/31/vue%E5%BC%80%E5%8F%91%E7%A7%BB%E5%8A%A8%E5%95%86%E5%9F%8Eday2/C:%5CUsers%5C79278%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1581574108201.png">
+<meta property="og:image" content="https://huyu18.github.io/2020/03/31/vue%E5%BC%80%E5%8F%91%E7%A7%BB%E5%8A%A8%E5%95%86%E5%9F%8Eday2/1585625123482.png">
+<meta property="article:published_time" content="2020-03-31T07:59:55.000Z">
+<meta property="article:modified_time" content="2020-03-31T09:50:08.677Z">
+<meta property="article:author" content="一叶之秋">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://huyu18.github.io/2020/03/31/vue%E5%BC%80%E5%8F%91%E7%A7%BB%E5%8A%A8%E5%95%86%E5%9F%8Eday2/1581493387629.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://huyu18.github.io/2020/03/31/vue开发移动商城day2/"/>
+
+
+
+
+
+  <title>vue开发移动商城day2 | 一叶之秋de博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一叶之秋de博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学无止境</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-lifes">
+          <a href="/lifes/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-apple"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            友链
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huyu18.github.io/2020/03/31/vue%E5%BC%80%E5%8F%91%E7%A7%BB%E5%8A%A8%E5%95%86%E5%9F%8Eday2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一叶之秋">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一叶之秋de博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vue开发移动商城day2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-31T15:59:55+08:00">
+                2020-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一、滑动吸顶效果"><a href="#一、滑动吸顶效果" class="headerlink" title="一、滑动吸顶效果"></a>一、滑动吸顶效果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">position: sticky;</span><br><span class="line">top: 44px;</span><br><span class="line">&#x2F;&#x2F; 滑动距离顶部44px时，position会自动转化为fixed属性，我们在做移动端商城项目时，比如有滑动到一定具体顶部标签停止不动，这个属性将很好实现。注意：目前有些低版本的浏览器可能不兼容，需谨慎使用。</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、数据保存模型"><a href="#二、数据保存模型" class="headerlink" title="二、数据保存模型"></a>二、数据保存模型</h3><p>我们需要做一个数据展示，在 ‘流行，新款，精选’ 三个模块里面数据会从后台一起取过来，同时在本页上拉加载更多，那数据如何储存才能实现更好的用户体验。</p>
+<p><img src="/2020/03/31/vue%E5%BC%80%E5%8F%91%E7%A7%BB%E5%8A%A8%E5%95%86%E5%9F%8Eday2/1581493387629.png" alt="alt"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">goods: &#123;</span><br><span class="line">   pop: &#123;page:1, list: []&#125;,</span><br><span class="line">   new: &#123;page:1, list: []&#125;,</span><br><span class="line">   sell: &#123;page:1, list: []&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>首先将我们从后台请求到的数据，存在一个 goods 对象中，这个对象里面分别又有 pop， new， sell 这三个对象用来区分‘流行，新款，精选’ 三个模块的数据；这三个对象对应的key，value分别展示数据的页数和总共list的数据。用户向上滑动加载时，page和list会跟随变化展示。</p>
+<p>第一步页面初始加载时，同时请求pop，new，sell类型的第一页数据展示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">import HomeSwiper from &quot;.&#x2F;childComps&#x2F;HomeSwiper&quot;</span><br><span class="line">import RecommendView from &quot;.&#x2F;childComps&#x2F;RecommendView&quot;</span><br><span class="line">import FeatureView from &quot;.&#x2F;childComps&#x2F;FeatureView&quot;</span><br><span class="line"></span><br><span class="line">import NavBar from &quot;components&#x2F;common&#x2F;navbar&#x2F;NavBar&quot;</span><br><span class="line">import TabControl from &quot;components&#x2F;content&#x2F;tabControl&#x2F;TabControl&quot;</span><br><span class="line"></span><br><span class="line">import &#123; getHomeMultidata, getHomeGoods &#125; from &quot;network&#x2F;home&quot;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &quot;Home&quot;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    HomeSwiper,</span><br><span class="line">    RecommendView,</span><br><span class="line">    FeatureView,</span><br><span class="line">    NavBar,</span><br><span class="line">    TabControl</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      banner: [],</span><br><span class="line">      recommends: [],</span><br><span class="line">      goods: &#123;</span><br><span class="line">        &#39;pop&#39;: &#123;page: 0, list: []&#125;,</span><br><span class="line">        &#39;new&#39;: &#123;page: 0, list: []&#125;,</span><br><span class="line">        &#39;sell&#39;: &#123;page: 0, list: []&#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line">    &#x2F;&#x2F; 1. 请求多个数据</span><br><span class="line">    getHomeMultidata().then(res &#x3D;&gt; &#123;</span><br><span class="line">      &#x2F;&#x2F;console.log(res)</span><br><span class="line">      this.banner &#x3D; res.data.data.banner.list;</span><br><span class="line">      this.recommends &#x3D; res.data.data.recommend.list;</span><br><span class="line">    &#125;),</span><br><span class="line">    &#x2F;&#x2F; 2.请求商品数据</span><br><span class="line">    this.getHomeGoods(&#39;pop&#39;)</span><br><span class="line">    this.getHomeGoods(&#39;new&#39;)</span><br><span class="line">    this.getHomeGoods(&#39;sell&#39;)</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    getHomeGoods(type) &#123;</span><br><span class="line">      const page &#x3D; this.goods[type].page + 1</span><br><span class="line">      &#x2F;&#x2F; 请求的数据封装在一个方法里，可以根据type类型复用这个方法，这样实现了初次加载时请求pop，new和		sell三个对象中第一页的数据；</span><br><span class="line">      getHomeGoods(type, page).then(res &#x3D;&gt; &#123;</span><br><span class="line">      	&#x2F;&#x2F; es6的变量解构，将res.data.list数据请求到后，一个一个push到this.goods[type].list中</span><br><span class="line">        this.goods[type].list.push(...res.data.list)</span><br><span class="line">        &#x2F;&#x2F; 请求完数据后，对page值进行保存</span><br><span class="line">        this.goods[type].page +&#x3D; 1</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>第二步，将大的数据展示页封装为一个大的组件GoodsList，有多少个list，将在组件中遍历多少个item展示出来；因为item也是可以复用的，也可以将其封装为一个GoodsListItem小组件在GoodsList组件中遍历展示。</p>
+<p>第三步，点击不同类型，传入点击类型后，请求不同类型的数据</p>
+<p>TabControl组件中将点击的index传给首页(this.$emit(‘tabClick’, index)), 在首页监听点击事件，根据index的值传入pop，new，sell三个字符串类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">tabClick(index) &#123;</span><br><span class="line">  switch(index) &#123;</span><br><span class="line">    case 0:</span><br><span class="line">      this.currentType &#x3D; &#39;pop&#39;</span><br><span class="line">      break</span><br><span class="line">    case 1:</span><br><span class="line">      this.currentType &#x3D; &#39;new&#39;</span><br><span class="line">      break</span><br><span class="line">    case 2:</span><br><span class="line">      this.currentType &#x3D; &#39;sell&#39;</span><br><span class="line">      break</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、Better-Scroll的使用"><a href="#三、Better-Scroll的使用" class="headerlink" title="三、Better-Scroll的使用"></a>三、Better-Scroll的使用</h3><p>我们在做移动端项目，原生的滚动会在手机端有卡顿，不够顺滑，对用户体验效果不好。所以，早期我们会使用icsroll的滚动框架，现在这个框架已经不再更新了，所以我们选择Better-Scroll这个框架<a href="https://better-scroll.github.io/docs/zh-CN/" target="_blank" rel="noopener">官网</a>。</p>
+<p><img src="/2020/03/31/vue%E5%BC%80%E5%8F%91%E7%A7%BB%E5%8A%A8%E5%95%86%E5%9F%8Eday2/C:%5CUsers%5C79278%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1581574108201.png" alt="1581574108201"></p>
+<h4 id="1、基础用法"><a href="#1、基础用法" class="headerlink" title="1、基础用法"></a>1、基础用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;wrapper&quot;&gt;</span><br><span class="line">  &lt;ul class&#x3D;&quot;content&quot;&gt;</span><br><span class="line">    &lt;li&gt;...&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;...&lt;&#x2F;li&gt;</span><br><span class="line">    ...</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">  &lt;!-- 这里可以放一些其它的 DOM，但不会影响滚动 --&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码中 BetterScroll 是作用在外层 wrapper 容器上的，滚动的部分是 content 元素。这里要注意的是，BetterScroll 只处理容器（wrapper）的第一个子元素（content）的滚动，其它的元素都会被忽略。</p>
+<h4 id="2、实时监听滚动的位置"><a href="#2、实时监听滚动的位置" class="headerlink" title="2、实时监听滚动的位置"></a>2、实时监听滚动的位置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;content&quot;&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">  	&lt;li&gt;数据列表&lt;&#x2F;li&gt;</span><br><span class="line">  	&lt;li&gt;数据列表&lt;&#x2F;li&gt;</span><br><span class="line">  	&lt;li&gt;数据列表&lt;&#x2F;li&gt;</span><br><span class="line">  	&lt;li&gt;数据列表&lt;&#x2F;li&gt;</span><br><span class="line">  	&lt;li&gt;数据列表&lt;&#x2F;li&gt;</span><br><span class="line">  	&lt;li&gt;数据列表&lt;&#x2F;li&gt;</span><br><span class="line">  	&lt;li&gt;数据列表&lt;&#x2F;li&gt;</span><br><span class="line">  	&lt;li&gt;数据列表&lt;&#x2F;li&gt;</span><br><span class="line">  	&lt;li&gt;数据列表&lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;.&#x2F;bscroll.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  &#x2F;&#x2F; 默认情况下BScroll是不可以实时监听滚动位置的</span><br><span class="line">  &#x2F;&#x2F; probe 侦测</span><br><span class="line">  &#x2F;&#x2F; 0,1 都是不侦测实时位置</span><br><span class="line">  &#x2F;&#x2F; 2 在手指滚动的过程中侦测，但手指离开后滚动的惯性位置不侦测</span><br><span class="line">  &#x2F;&#x2F; 3 只要滚动就侦测</span><br><span class="line">  const bscroll &#x3D; new BScroll(document.querySelector(&#39;.content&#39;),&#123;</span><br><span class="line">    probeType: 3,   &#x2F;&#x2F; 根据需求选择值</span><br><span class="line">    pullUpLoad: true</span><br><span class="line">  &#125;)</span><br><span class="line">  bscroll.on(&#39;scroll&#39;,(position) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(position)</span><br><span class="line">  &#125;)</span><br><span class="line">  bscroll.on(&#39;pullingUp&#39;,() &#x3D;&gt; &#123;</span><br><span class="line">  	console.log(&#39;上拉加载更多&#39;)</span><br><span class="line">  	&#x2F;&#x2F; 在这里执行网络请求，请求更多页的数据</span><br><span class="line">  	</span><br><span class="line">  	&#x2F;&#x2F; 等数据请求完，并且将新的数据展示出来后</span><br><span class="line">  	</span><br><span class="line">  	setTimeOut(() &#x3D;&gt; &#123;</span><br><span class="line">  	  bscroll.finsihPullUp()  &#x2F;&#x2F; 1s 后再执行上拉加载更多函数 </span><br><span class="line">  	&#125;,1000)</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、BScroll的封装"><a href="#3、BScroll的封装" class="headerlink" title="3、BScroll的封装"></a>3、BScroll的封装</h4><p>我们在使用第三方插件的时候，为了防止第三方插件不再更新，后续更改其他插件项目重构会很麻烦，我们一般在项目中会对插件进行一个封装后再使用。</p>
+<p>// ref如果是绑定在组件中的，那么通过<strong>this.refs.refname</strong>绑定的是一个组件对象</p>
+<p>// ref如果是绑定在普通的元素中，那么通过this.refs.refname绑定的是一个元素对象</p>
+<p>// 我们在获取元素为了避免class类名重复，通过ref属性获取会更好</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;wrapper&quot; ref&#x3D;&quot;wrapper&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;content&quot;&gt;</span><br><span class="line">      &lt;slot&gt;&lt;&#x2F;slot&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import BScroll from &quot;better-scroll&quot;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &quot;Scroll&quot;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      scroll: null</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    this.scroll &#x3D; new BScroll(this.$refs.wrapper, &#123;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4、滚动区域的bug分析"><a href="#4、滚动区域的bug分析" class="headerlink" title="4、滚动区域的bug分析"></a>4、滚动区域的bug分析</h4><p>● Better-Scroll在决定有多少区域可以滚动时，是根据scrollHeight属性决定</p>
+<p>​    ○ scrollHeight属性是根据Better-Scroll的content中的子组件的高度</p>
+<p>​    ○ 但是图片还未加载出来计算出的高度是错误的，等加载完成后出现新的高度，scrollHeight的属性未更新</p>
+<p>​    ○ 所以监听每张图片是否加载完成，只要有一张图片加载完成了，执行一次refresh()</p>
+<p>​    ○ @load=’方法’ ，监听图片加载完成</p>
+<p>​    ○ 最后调用scroll.refresh()</p>
+<p>● 非父子组件通信</p>
+<p>​    ○ 由于涉及非父子组件之间的通信，所以在调用refresh()方法时，选择了<strong>事件总线</strong>。</p>
+<p>​    ○ Vue.prototype.$bus = new Vue()</p>
+<p>​    ○ this.$bus.$emit(‘事件名称’，参数)</p>
+<p>​    ○ this.$bus.$on(‘事件名称’，回调函数(参数))</p>
+<p><img src="/2020/03/31/vue%E5%BC%80%E5%8F%91%E7%A7%BB%E5%8A%A8%E5%95%86%E5%9F%8Eday2/1585625123482.png" alt="alt"></p>
+<h3 id="四、Back-Top封装"><a href="#四、Back-Top封装" class="headerlink" title="四、Back-Top封装"></a>四、Back-Top封装</h3><p>Back-Top组件与BScroll组件是两个平行组件，现在我们需要监听Back-Top的点击事件，然后获取BScroll组件中滚动事件的方法。</p>
+<p>那么组件的点击事件如何使用？.native修饰符</p>
+<ul>
+<li>我们在需要监听一个组件的原生点击事件时，必须给对应的事件加上.native修饰符，才能进行监听。</li>
+</ul>
+<p>通过对Back-Top组件监听<strong>@click.native</strong>点击事件，然后在Home首页里面通过ref属性获取BScroll组件里面的方法<strong>this.$refs.srcoll.scrollTo()</strong>即可。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/11/Hexo%E5%BC%95%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/" rel="next" title="Hexo引用本地图片无法显示">
+                <i class="fa fa-chevron-left"></i> Hexo引用本地图片无法显示
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/31/Hexo-Next%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E5%88%B6%E5%8A%9F%E8%83%BD%EF%BC%89/" rel="prev" title="Hexo-Next搭建个人博客（代码块复制功能）">
+                Hexo-Next搭建个人博客（代码块复制功能） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="一叶之秋" />
+            
+              <p class="site-author-name" itemprop="name">一叶之秋</p>
+              <p class="site-description motion-element" itemprop="description">记录生活，一起成长</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、滑动吸顶效果"><span class="nav-number">1.</span> <span class="nav-text">一、滑动吸顶效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、数据保存模型"><span class="nav-number">2.</span> <span class="nav-text">二、数据保存模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、Better-Scroll的使用"><span class="nav-number">3.</span> <span class="nav-text">三、Better-Scroll的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、基础用法"><span class="nav-number">3.1.</span> <span class="nav-text">1、基础用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、实时监听滚动的位置"><span class="nav-number">3.2.</span> <span class="nav-text">2、实时监听滚动的位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、BScroll的封装"><span class="nav-number">3.3.</span> <span class="nav-text">3、BScroll的封装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、滚动区域的bug分析"><span class="nav-number">3.4.</span> <span class="nav-text">4、滚动区域的bug分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、Back-Top封装"><span class="nav-number">4.</span> <span class="nav-text">四、Back-Top封装</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">一叶之秋</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script type="text/javascript"
+  color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
